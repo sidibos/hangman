@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import './app.css';
+import GameBoard from "./game-board";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    return (
+        <div className="app-container">
+            <h1>Welcome to Hangman!</h1>
+            <p>Do you want toplay a game 2?</p>
+
+            <div>
+                <GameBoard 
+                    secretWord="Panda" 
+                    maxErrors={6}
+                />
+            </div>
+        </div>
+    );
 }
-
-export default App;
