@@ -2,7 +2,7 @@ import {useState} from "react";
 import LetterGrid from './letter-grid';
 import ButtonGrid from './button-grid';
 
-export default function({secretWord, maxErrors}) {
+export default function({secretWord, maxErrors, isShown}) {
     const [guessedLetters, setGuessedLetters] = useState([]);
     const [errorCount, setErrorCount] = useState(0);
 
@@ -17,7 +17,7 @@ export default function({secretWord, maxErrors}) {
     }
 
     return (
-        <div>
+        <div className={isShown ? '' : 'hidden'}>
             <div>
                 Mistakes left: {maxErrors - errorCount}
             </div>
